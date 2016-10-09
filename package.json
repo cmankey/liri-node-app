@@ -1,0 +1,30 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "gets tweets, information about a song or information about a movie",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmankey/liri-node-app.git"
+  },
+  "keywords": [
+    "liri",
+    "tweets",
+    "song",
+    "movie"
+  ],
+  "author": "Cohra Mankey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmankey/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/cmankey/liri-node-app#readme",
+  "dependencies": {
+    "request": "^2.75.0",
+    "spotify": "^0.3.0",
+    "twitter": "^1.4.0"
+  }
+}
