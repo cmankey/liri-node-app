@@ -1,0 +1,25 @@
+Title: The Lion King
+Year: 1994
+Rating: G
+Country: USA
+Language: English, Swahili, Xhosa, Zulu
+Plot: Lion cub and future king Simba searches for his identity. His eagerness to please others and penchant for testing his boundaries sometimes gets him into trouble.
+Actors: Matthew Broderick, Jonathan Taylor Thomas, James Earl Jones, Jim Cummings
+Rotten Tomatoes Rating: 8.3
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/the_lion_king/
+
+Title: The Shawshank Redemption
+Year: 1994
+Rating: R
+Country: USA
+Language: English
+Plot: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.
+Actors: Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler
+Rotten Tomatoes Rating: 8.2
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/shawshank_redemption/
+
+Artist(s): Backstreet Boys 
+Song name: I Want It That Way
+Preview: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6
+Album: The Hits--Chapter One
+
