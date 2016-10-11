@@ -50,13 +50,13 @@ function songInfo(songName) {
             }
             i++;
         }
-        var artistsArray = item.artists;
-        var artistsString = '';
-        for (var i = 0; i < artistsArray.length; i++) {
-            artistsString += item.artists[i].name + ' ';
+        var artistsArray = [];
+        for (var i = 0; i < item.artists.length; i++) {
+            artistsArray.push(item.artists[i].name);
         }
+        var artists = artistsArray.join(', ')
         var output =
-            'Artist(s): ' + artistsString +
+            'Artist(s): ' + artists +
             '\nSong name: ' + item.name +
             '\nPreview: ' + item.preview_url +
             '\nAlbum: ' + item.album.name + '\n\n';
@@ -88,24 +88,37 @@ function movieInfo(movieName) {
 }
 
 function runLiri (command, searchTerm) {
-    if ( command === 'my-tweets' ) {
-        tweets(searchTerm);
-    } else if ( command === 'spotify-this-song' ) {
-        songInfo(searchTerm);
-    } else if ( command === 'movie-this' ) {
-        movieInfo(searchTerm);
+    switch ( command ) {
+        case 'my-tweets':
+            tweets(searchTerm);
+            break;
+        case 'spotify-this-song':
+            songInfo(searchTerm);
+            break;
+        case 'movie-this':
+            movieInfo(searchTerm);
+            break;
+        case 'do-what-it-says':
+            fs.readFile('random.txt', 'utf8', function (err, data) {
+                if( err ) {
+                    return console.log(err);
+                }
+                var dataArray = data.split(',');
+                var command = dataArray[0];
+                var searchTerm = dataArray[1];
+                if ((searchTerm.charAt(0) === "'" && searchTerm.charAt(searchTerm.length-1) === "'") || (searchTerm.charAt(0) === '"' && searchTerm.charAt(searchTerm.length-1) === '"')) {
+                    console.log('ran if');
+                    searchTerm = searchTerm.slice(1, searchTerm.length - 1);
+                }
+                console.log(dataArray);
+                console.log(command, searchTerm);
+                runLiri(command, searchTerm);
+            });
+
+            break;
+        default:
+            console.log('I don\'t recognize that command.')
     }
 }
 
-if ( process.argv[2] === 'do-what-it-says' ) {
-    fs.readFile('random.txt', 'utf8', function (err, data) {
-        if( err ) {
-            return console.log(err);
-        }
-        var dataArray = data.split(',');
-        console.log(dataArray);
-        runLiri(dataArray[0], dataArray[1]);
-    })
-} else {
-    runLiri(process.argv[2], process.argv[3]);
-}
+runLiri(process.argv[2], process.argv[3]);
