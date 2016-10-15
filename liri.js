@@ -107,11 +107,8 @@ function runLiri (command, searchTerm) {
                 var command = dataArray[0];
                 var searchTerm = dataArray[1];
                 if ((searchTerm.charAt(0) === "'" && searchTerm.charAt(searchTerm.length-1) === "'") || (searchTerm.charAt(0) === '"' && searchTerm.charAt(searchTerm.length-1) === '"')) {
-                    console.log('ran if');
                     searchTerm = searchTerm.slice(1, searchTerm.length - 1);
                 }
-                console.log(dataArray);
-                console.log(command, searchTerm);
                 runLiri(command, searchTerm);
             });
 
